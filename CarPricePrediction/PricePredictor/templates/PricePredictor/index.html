@@ -1,0 +1,47 @@
+{% extends 'PricePredictor/basic.html' %}
+{% block title%}Home- Car Price Predictor{% endblock %}
+{% block css %}
+h1 {
+  text-shadow: 1px 1px #FFFFFF;
+}
+
+
+{% endblock %}
+{% block body %}
+{% load static %}
+
+<main  style='background-image: url("{% static "PricePredictor/intro.jpg" %}");
+background-size:cover;
+height:92vh;'>
+  <div class="container" style="padding-top:60px;"  >
+
+
+    <div class="p-5 h-100 bg-light rounded-3" style='
+  background-image : url("{% static "PricePredictor/HeaT.png" %}");
+
+  background-size: cover;'>
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold mt-5" style="color:#FF0909;">Car Price Predictor!!</h1>
+        <p class="col-md-8 fs-4 mt-5" style="color:#FFFFFF;">With help of trained Machine Learning Model , you can predict price of a car. Just feed the required data and get an estimated price. Have a try..</p>
+        <a href="/PricePredictor/predict"><button class="btn btn-primary btn-lg" type="button">Estimate Price</button></a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+
+
+
+
+
+
+{% endblock %}
+{% block js %}
+
+
+
+
+
+
+{% endblock %}

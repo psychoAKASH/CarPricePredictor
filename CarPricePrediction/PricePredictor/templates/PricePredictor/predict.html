@@ -1,0 +1,84 @@
+{% extends 'PricePredictor/basic.html' %}
+{% block title%}Predictor- Car Price Predictor{% endblock %}
+{% block css %}
+
+
+
+{% endblock %}
+{% block body %}
+
+<div class="container">
+
+  <div class="col my-4">
+    <h2>Enter required details for price estimation:</h2>
+    <form class="row g-3" method="post" action="/PricePredictor/predict/">
+      {% csrf_token %}
+      <div class="col-md-6">
+        <label for="year" class="form-label">Model Year</label>
+        <input type="number" class="form-control" id="year" name="year" required/>
+      </div>
+      <div class="col-md-6">
+        <label for="presentprice" class="form-label">Selling Price</label>
+        <input type="number" step="any" class="form-control" id="presentprice" name="presentprice" required />
+      </div>
+
+      <div class="col-6">
+        <label for="kilometer" class="form-label">Kilometer Driven</label>
+        <input type="number" step="any" class="form-control" id="kilometer" name="kilometer" required/>
+      </div>
+        <div id="fuelDiv" class="col-md-6">
+        <label  for="fuel" id ="fuel" class="form-label" >Fuel Type</label><br>
+<!--        <input type="number" class="form-control" id="fuel" name="fuel" />-->
+            <input type="radio" id="petrol" class = "fuel" name="fuel" value="0">
+            <label for="petrol">Petrol</label><br>
+            <input type="radio" id="diesel" class = "fuel" name="fuel" value="1">
+            <label for="diesel">Diesel</label><br>
+            <input type="radio" id="cng" class = "fuel" name="fuel" value="2">
+            <label for="cng">CNG</label>
+
+
+
+      </div>
+        <div class="col-md-6 rounded-3" >
+        <label for="seller" id="seller" class="form-label">Seller Type</label><br>
+            <input type="radio" id="dealer" name="seller" value="0">
+            <label for="dealer">Dealer</label><br>
+            <input type="radio" id="individual" name="seller" value="1">
+            <label for="individual">Individual</label>
+<!--        <input type="number" class="form-control" id="seller" name="seller"/>-->
+
+      </div>
+        <div class="col-md-6 rounded-3" >
+        <label  for="transmission" id="transmission" class="form-label">Transmission Type</label><br>
+<!--        <input type="number" class="form-control" id="transmission" name="transmission" />-->
+         <input type="radio" id="manual" name="transmission" value="0">
+            <label for="manual">Manual</label><br>
+            <input type="radio" id="automatic" name="transmission" value="1">
+            <label for="automatic">Automatic</label>
+      </div>
+      <div class="col-md-6 rounded-3">
+        <label for="owner" class="form-label">No. of Previous Owner</label>
+        <input type="number" class="form-control" id="owner" name="owner" required />
+      </div>
+      <div id= "result" class="col-12 rounded-3">
+        <button type="submit" class="btn btn-primary">Get Estimate</button>
+      </div>
+    </form>
+    <br>
+    {% if scoreval %}
+    <h1>The Estimated Price is Rs: {{scoreval}}</h1><br>
+      <h6><a href="/PricePredictor/predict" class="btn btn-primary">Want to estimate again</a></h6>
+    {% endif %}
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}
+{% block js %}
+
+
+
+{% endblock %}
