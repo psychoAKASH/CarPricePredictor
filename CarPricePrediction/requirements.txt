@@ -17,8 +17,11 @@ cycler==0.10.0
 debugpy==1.4.1
 decorator==5.0.9
 defusedxml==0.7.1
+dj-database-url==1.0.0
 Django==4.0.2
+django-heroku==0.3.1
 entrypoints==0.3
+gunicorn==20.1.0
 importlib-metadata==4.10.1
 ipykernel==6.0.3
 ipython==7.26.0
@@ -60,6 +63,7 @@ Pillow==8.3.1
 plotly==5.10.0
 prometheus-client==0.12.0
 prompt-toolkit==3.0.19
+psycopg2==2.9.3
 pycodestyle==2.9.1
 pycparser==2.21
 pyee==8.2.2
@@ -95,6 +99,7 @@ urllib3==1.26.8
 wcwidth==0.2.5
 webencodings==0.5.1
 websockets==10.1
+whitenoise==6.2.0
 widgetsnbextension==4.0.3
 wrapt==1.12.1
 xgboost==1.6.2
