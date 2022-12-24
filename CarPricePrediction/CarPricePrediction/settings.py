@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-rx)x$s0a=yvjyy(=--qgtt6@l4lmvbiow#w&^g7ug%4#5uzgf2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['carpricepredictor-production.up.railway.app']
 
 
 # Application definition
